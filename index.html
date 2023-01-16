@@ -3,22 +3,66 @@
 
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>replit</title>
   <link href="style.css" rel="stylesheet" type="text/css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
 </head>
 
-<body>
-  <div  id="welcome-js">Change text to "Welcome to Scripting in JS"</div>
-  <div id="welcome-cs">Change text to "Welcome to Computer Science"</div>
-  <div id="welcome-fun">Change text to "Scripting is FUN!!!"</div>
-  <script src="script.js"></script>
+<body class='bg-light'>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 mt-4">
+        <div class="card text-center">
+          <div class="card-header ">
+            <h3 class="fw-bold">Module 1 Assignment 1 Requirements</h3>        
+            <p class="lead fs-6 mb-4">(Display three messages) Write a program that displays the following messages:</p>
+          </div>
+          <div class="card-body">
+            <div class="card">
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">Welcome to Scripting in JS</li>
+              <li class="list-group-item" style="font-style:italic">Welcome to Computer Science</li>
+              <li class="list-group-item" style="font-weight:bold">Scripting is FUN!!!</li>
+            </ul>
+            </div>
+          </div>
+        </div>
+      </div>      
+
+
+      <div class="col-lg-6 mt-4">
+        <div class="card text-center">
+          <div class="card-header">
+            <h3 class="fw-bold underline">Workspace</h3>
+            <p class="lead mb-4">Use Javascript to update the below text using the script.js file:</p>
+          </div>
+          <div class="card-body">
+            <div class="card">
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item" id="welcome-js">Use id welcome-js to add text here</li>
+              <li class="list-group-item" id="welcome-cs" style="font-style:italic">Use id welcome-cs to add text here</li>
+              <li class="list-group-item" id="welcome-fun" style="font-weight:bold">Use id welcome-fun to add text here</li>
+            </ul>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
 
   <!--
   This script places a badge on your repl's full-browser view back to your repl's cover
   page. Try various colors for the theme: dark, light, red, orange, yellow, lime, green,
   teal, blue, blurple, magenta, pink!
   -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
+
+  <script src="script.js"></script>
   <script src="https://replit.com/public/js/replit-badge.js" theme="blue" defer></script>
 </body>
 
