@@ -17,25 +17,16 @@
       <div class="col-lg-6 mt-4">
         <div class="card text-center">
           <div class="card-header">
-            <h3 class="fw-bold">Module 1 Assignment 2 Requirements</h3>
+            <h3 class="fw-bold">Module 1 Assignment 3 Requirements</h3>
             <p class="lead fs-6">
-              The following pseudocode describes how a bookstore computes the price of an order from the total price and
-              the number of the books that were ordered.
+(Convert Celsius to Fahrenheit) Write a program that reads a Celsius degree in a double value from the console, then converts it to Fahrenheit and displays the result. The formula for the conversion is as follows:
             </p>
           </div>
           <div class="card-body bg-primary bg-gradient">
             <div class="card">
               <ul class="list-group list-group-flush">
-                <li class="list-group-item fw-light fst-italic">Ask user for the total book price and the number of
-                  books.</li>
-                <li class="list-group-item fw-light fst-italic">Compute the tax (7.5 percent of the total book price).
-                </li>
-                <li class="list-group-item fw-light fst-italic">Compute the shipping charge ($2 per book).</li>
-                <li class="list-group-item fw-light fst-italic">The price of the order is the sum of the total book
-                  price, the tax, and the
-                  shipping charge.</li>
-                <li class="list-group-item fw-light fst-italic">Print the price of the order.</li>
-                <li class="list-group-item fw-light fst-italic">Translate this pseudocode in the script.js file</li>
+                <li class="list-group-item fw-light fst-italic">fahrenheit = (9/5) * celsius + FREEZING</li>
+                <li class="list-group-item fw-light fw-bold">In your code, ensure that FREEZING is a const that equals 32</li>
               </ul>
             </div>
           </div>
@@ -53,15 +44,12 @@
             <div class="card">
               <ul class="list-group list-group-flush">
                 <li class="list-group-item fw-bold">
-                  Please enter the number of books:
-                  <input type="number" id="total-num-of-books" />
+                  Please enter the degrees in celsius: 
+                  <input type="number" id="deg-in-celsius" />
+                  <button id="calculate">Calculate</button>
                 </li>
-                <li class="list-group-item fw-bold">
-                  Please enter the price of the books:
-                  <input type="number" id="price-of-books" />
-                </li>
-                <li class="list-group-item fw-bold" id="welcome-fun">
-                  <p>Your Total: <span id='total'> $0.00</span></p>
+                <li class="list-group-item fw-bold" id="deg-in-celsius">
+                  <p>The degrees in Fahrenheit: <span id='deg-in-fahrenheit'>xx</span>°</p>
                 </li>
               </ul>
             </div>
