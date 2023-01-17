@@ -17,16 +17,28 @@
       <div class="col-lg-6 mt-4">
         <div class="card text-center">
           <div class="card-header">
-            <h3 class="fw-bold">Module 1 Assignment 3 Requirements</h3>
+            <h3 class="fw-bold">Module 1 Assignment 4 Requirements</h3>
             <p class="lead fs-6">
-(Convert Celsius to Fahrenheit) Write a program that reads a Celsius degree in a double value from the console, then converts it to Fahrenheit and displays the result. The formula for the conversion is as follows:
+              (Health application: BMI) Write a program that calculates a person's BMI.Use the following website to use
+              the American Cancer Society indexes for BMI calculation.
             </p>
+            <p><a
+                href="https://www.cancer.org/healthy/cancer-causes/diet-physical-activity/body-weight-and-cancer-risk/adult-bmi.html">Normal
+                Weight Ranges: Body Mass Index (BMI)</a>
+            </p>
+            <p class="lead fs-6">For example, if a person is 5 feet and 10 inches, you will enter 5 for feet and 10 for
+              inches.</p>
+            <p class="lead fs-6">Here is the pseudocode necessary to complete the code:</p>
           </div>
           <div class="card-body bg-primary bg-gradient">
             <div class="card">
               <ul class="list-group list-group-flush">
-                <li class="list-group-item fw-light fst-italic">fahrenheit = (9/5) * celsius + FREEZING</li>
-                <li class="list-group-item fw-light fw-bold">In your code, ensure that FREEZING is a const that equals 32</li>
+                <li class="list-group-item fw-bold">Input weight in pounds</li>
+                <li class="list-group-item fw-bold">Input height in feet</li>
+                <li class="list-group-item fw-bold">Input height in inches</li>
+                <li class="list-group-item fw-bold">Print BMI Calculation - Formula: weight (lb) / [height (in)]2 x 703
+                </li>
+                <li class="list-group-item fw-bold">Print BMI Index determination</li>
               </ul>
             </div>
           </div>
@@ -44,13 +56,21 @@
             <div class="card">
               <ul class="list-group list-group-flush">
                 <li class="list-group-item fw-bold">
-                  Please enter the degrees in celsius: 
-                  <input type="number" id="deg-in-celsius" />
+                  Please enter your current weight:
+                  <input type="number" id="weight-in-pounds" />
+                </li>
+                <li class="list-group-item fw-bold">
+                  Please enter your height, in feet: <input type="number" id="height-in-feet" />
+                </li>
+                <li class="list-group-item fw-bold">
+                  Please enter your (leftover) height, in inches: <input type="number" id="height-in-inches" />
                   <button id="calculate">Calculate</button>
                 </li>
-                <li class="list-group-item fw-bold" id="deg-in-celsius">
-                  <p>The degrees in Fahrenheit: <span id='deg-in-fahrenheit'>xx</span>°</p>
+                <li class="list-group-item fw-bold">
+                  Your BMI Calculation is <span id="bmi-calculation">0.00</span>
                 </li>
+                <li class="list-group-item fw-bold">
+                  Your BMI Index is <span id='bmi-determination' class="fw-normal fst-italic">Undetermined</span>
               </ul>
             </div>
           </div>
