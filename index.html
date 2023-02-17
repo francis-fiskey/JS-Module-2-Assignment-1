@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>replit</title>
   <link href="style.css" rel="stylesheet" type="text/css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" rel="stylesheet"
+    type="text/css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 
@@ -64,13 +66,21 @@
                 </li>
                 <li class="list-group-item fw-bold">
                   Please enter your (leftover) height, in inches: <input type="number" id="height-in-inches" />
-                  <button id="calculate">Calculate</button>
+                  <button id="calculate" class="btn btn-primary">Calculate</button>
                 </li>
                 <li class="list-group-item fw-bold">
                   Your BMI Calculation is <span id="bmi-calculation">0.00</span>
                 </li>
                 <li class="list-group-item fw-bold">
                   Your BMI Index is <span id='bmi-determination' class="fw-normal fst-italic">Undetermined</span>
+                </li>
+                <li class="list-group-item fw-bold">
+                  <!-- Button trigger modal -->
+                  <button type="button" id="btn-unit-tests" class="btn btn-primary" data-bs-toggle="modal"
+                    data-bs-target="#unitTestModal">
+                    Run Unit Tests
+                  </button>
+                </li>
               </ul>
             </div>
           </div>
@@ -79,16 +89,214 @@
     </div>
   </div>
 
-  <!--
-  This script places a badge on your repl's full-browser view back to your repl's cover
-  page. Try various colors for the theme: dark, light, red, orange, yellow, lime, green,
-  teal, blue, blurple, magenta, pink!
-  -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
-    crossorigin="anonymous"></script>
+  <!-- Unit Test Modal -->
+  <div class="modal fade" id="unitTestModal" tabindex="-1" aria-labelledby="unitTestModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="unitTestModalLabel">Module 2 Assignmetn 1: Unit Test Outcomes</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="container">
+            <div class="row">
+              <!-- Unit Test 1 -->
+              <div class="col-lg-3 mt-4">
+                <div class="card text-center">
+                  <div class="card-header">
+                    <h3 class="fw-bold">Unit Test #1</h3>
+                  </div>
+                  <div class="card-body" style="--bs-bg-opacity: .25;">
+                    <h5 class="card-title" id='testone-title'>Test Not Run</h5>
+                  </div>
+                  <div class="card">
+                    <div class="card-body bg-secondary fw-bold" style="--bs-bg-opacity: .25;">
+                      <p class="card-text">Test parameters are found below</p>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                      <li class="list-group-item fst-italic bg-info" style="--bs-bg-opacity: .25;">height = 5 feet 7
+                        inches</li>
+                      <li class="list-group-item fst-italic bg-info" style="--bs-bg-opacity: .25;">weight = 182 pounds
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="card">
+                    <div class="card-body bg-secondary fw-bold" style="--bs-bg-opacity: .25;">Expected Outcome</div>
+                    <ul class="list-group list-group-flush">
+                      <li class="list-group-item fst-italic bg-info" style="--bs-bg-opacity: .25;">
+                        BMI = <span id="expected-outcome-testone-bmi"></span>
+                      </li>
+                      <li class="list-group-item fst-italic bg-info" style="--bs-bg-opacity: .25;">
+                        BMI Category = <span class="fw-italic" id="expected-outcome-testone-category"></span>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="card">
+                    <div class="card-body bg-secondary fw-bold" style="--bs-bg-opacity: .25;">Realized Outcome</div>
+                    <ul class="list-group list-group-flush">
+                      <li class="list-group-item fst-italic bg-warning" style="--bs-bg-opacity: .25;">
+                        BMI = <span id='realized-outcome-testone-bmi'></span>
+                      </li>
+                      <li class="list-group-item fst-italic bg-warning" style="--bs-bg-opacity: .25;">
+                        BMI Category = <span id='realized-outcome-testone-category' class="fw-italic"></span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <!-- End of Unit Test 1 -->
+              <!-- Unit Test 2 -->
+              <div class="col-lg-3 mt-4">
+                <div class="card text-center">
+                  <div class="card-header">
+                    <h3 class="fw-bold">Unit Test #2</h3>
+                  </div>
+                  <div class="card-body" style="--bs-bg-opacity: .25;">
+                    <h5 class="card-title" id='testtwo-title'>Test Not Run</h5>
+                  </div>
+                  <div class="card">
+                    <div class="card-body bg-secondary fw-bold" style="--bs-bg-opacity: .25;">
+                      <p class="card-text">Test parameters are found below</p>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                      <li class="list-group-item fst-italic bg-info" style="--bs-bg-opacity: .25;">height = 6 feet 3
+                        inches</li>
+                      <li class="list-group-item fst-italic bg-info" style="--bs-bg-opacity: .25;">weight = 135 pounds
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="card">
+                    <div class="card-body bg-secondary fw-bold" style="--bs-bg-opacity: .25;">Expected Outcome</div>
+                    <ul class="list-group list-group-flush">
+                      <li class="list-group-item fst-italic bg-info" style="--bs-bg-opacity: .25;">
+                        BMI = <span id="expected-outcome-testtwo-bmi"></span>
+                      </li>
+                      <li class="list-group-item fst-italic bg-info" style="--bs-bg-opacity: .25;">
+                        BMI Category = <span class="fw-italic" id="expected-outcome-testtwo-category"></span>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="card">
+                    <div class="card-body bg-secondary fw-bold" style="--bs-bg-opacity: .25;">Realized Outcome</div>
+                    <ul class="list-group list-group-flush">
+                      <li class="list-group-item fst-italic bg-warning" style="--bs-bg-opacity: .25;">
+                        BMI = <span id='realized-outcome-testtwo-bmi'></span>
+                      </li>
+                      <li class="list-group-item fst-italic bg-warning" style="--bs-bg-opacity: .25;">
+                        BMI Category = <span id='realized-outcome-testtwo-category' class="fw-italic"></span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <!-- End of Unit Test 2 -->
+              <!-- Unit Test 3 -->
+              <div class="col-lg-3 mt-4">
+                <div class="card text-center">
+                  <div class="card-header">
+                    <h3 class="fw-bold">Unit Test #4</h3>
+                  </div>
+                  <div class="card-body" style="--bs-bg-opacity: .25;">
+                    <h5 class="card-title" id='testthree-title'>Test Not Run</h5>
+                  </div>
+                  <div class="card">
+                    <div class="card-body bg-secondary fw-bold" style="--bs-bg-opacity: .25;">
+                      <p class="card-text">Test parameters are found below</p>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                      <li class="list-group-item fst-italic bg-info" style="--bs-bg-opacity: .25;">height = 5 feet 2
+                        inches</li>
+                      <li class="list-group-item fst-italic bg-info" style="--bs-bg-opacity: .25;">weight = 210 pounds
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="card">
+                    <div class="card-body bg-secondary fw-bold" style="--bs-bg-opacity: .25;">Expected Outcome</div>
+                    <ul class="list-group list-group-flush">
+                      <li class="list-group-item fst-italic bg-info" style="--bs-bg-opacity: .25;">
+                        BMI = <span id="expected-outcome-testthree-bmi"></span>
+                      </li>
+                      <li class="list-group-item fst-italic bg-info" style="--bs-bg-opacity: .25;">
+                        BMI Category = <span class="fw-italic" id="expected-outcome-testthree-category"></span>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="card">
+                    <div class="card-body bg-secondary fw-bold" style="--bs-bg-opacity: .25;">Realized Outcome</div>
+                    <ul class="list-group list-group-flush">
+                      <li class="list-group-item fst-italic bg-warning" style="--bs-bg-opacity: .25;">
+                        BMI = <span id='realized-outcome-testthree-bmi'></span>
+                      </li>
+                      <li class="list-group-item fst-italic bg-warning" style="--bs-bg-opacity: .25;">
+                        BMI Category = <span id='realized-outcome-testthree-category' class="fw-italic"></span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <!-- End of Unit Test 3 -->
+              <!-- Unit Test 4 -->
+              <div class="col-lg-3 mt-4">
+                <div class="card text-center">
+                  <div class="card-header">
+                    <h3 class="fw-bold">Unit Test #3</h3>
+                  </div>
+                  <div class="card-body" style="--bs-bg-opacity: .25;">
+                    <h5 class="card-title" id='testfour-title'>Test Not Run</h5>
+                  </div>
+                  <div class="card">
+                    <div class="card-body bg-secondary fw-bold" style="--bs-bg-opacity: .25;">
+                      <p class="card-text">Test parameters are found below</p>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                      <li class="list-group-item fst-italic bg-info" style="--bs-bg-opacity: .25;">height = 5 feet 2
+                        inches</li>
+                      <li class="list-group-item fst-italic bg-info" style="--bs-bg-opacity: .25;">weight = 210 pounds
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="card">
+                    <div class="card-body bg-secondary fw-bold" style="--bs-bg-opacity: .25;">Expected Outcome</div>
+                    <ul class="list-group list-group-flush">
+                      <li class="list-group-item fst-italic bg-info" style="--bs-bg-opacity: .25;">
+                        BMI = <span id="expected-outcome-testfour-bmi"></span>
+                      </li>
+                      <li class="list-group-item fst-italic bg-info" style="--bs-bg-opacity: .25;">
+                        BMI Category = <span class="fw-italic" id="expected-outcome-testfour-category"></span>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="card">
+                    <div class="card-body bg-secondary fw-bold" style="--bs-bg-opacity: .25;">Realized Outcome</div>
+                    <ul class="list-group list-group-flush">
+                      <li class="list-group-item fst-italic bg-warning" style="--bs-bg-opacity: .25;">
+                        BMI = <span id='realized-outcome-testfour-bmi'></span>
+                      </li>
+                      <li class="list-group-item fst-italic bg-warning" style="--bs-bg-opacity: .25;">
+                        BMI Category = <span id='realized-outcome-testfour-category' class="fw-italic"></span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <!-- End of Unit Test 4 -->
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- This script places a badge on your repl's full-browser view back to your repl's cover page. Try
+    various colors for the theme: dark, light, red, orange, yellow, lime, green, teal, blue, blurple, magenta, pink! -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.min.js"></script>
 
   <script src="script.js"></script>
+  <script src="unit-tests.js"></script>
   <script src="https://replit.com/public/js/replit-badge.js" theme="blue" defer></script>
 </body>
 
